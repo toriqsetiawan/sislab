@@ -20,44 +20,31 @@
             <div class="panel-body">
               <table class="table table-hover table-striped tablesorter">
                 <thead>
-                    <tr>
-                      <th><center>JAM</center></th>
-                      <th>SENIN</th>
-                      <th>SELASA</th>
-                      <th>RABU</th>
-                      <th>KAMIS</th>
-                      <th>JUM'AT</th>
-                      <th>SABTU</th>
-                    </tr>
+                  <tr>
+                    <th>JAM</th>
+                    <th>SENIN</th>
+                    <th>SELASA</th>
+                    <th>RABU</th>
+                    <th>KAMIS</th>
+                    <th>JUM'AT</th>
+                    <th>SABTU</th>
+                  </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>RPL/</td>
-                      <td>2011</td>
-                      <td>asisten</td>
-                      <td>toriqbagus@gmail.com</td>
-                      <td>085755228747</td>
-                      <td>
-                        <center>
-                          <a href="#"><i class="fa fa-edit"></i></a>
-                          <a href="#"><i class="fa fa-minus-square-o"></i></a>
-                        </center>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>toriq bagus</td>
-                      <td>2011</td>
-                      <td>asisten</td>
-                      <td>toriqbagus@gmail.com</td>
-                      <td>085755228747</td>
-                      <td>
-                        <center>
-                          <a href="#"><i class="fa fa-edit"></i></a>
-                          <a href="#"><i class="fa fa-minus-square-o"></i></a>
-                        </center>
-                      </td>
-                    </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>RPL</td>
+                    <td>2011</td>
+                    <td>asisten</td>
+                    <td>toriqbagus@gmail.com</td>
+                    <td>085755228747</td>
+                    <td>
+                      <center>
+                        <a href="#"><i class="fa fa-edit"></i></a>
+                        <a href="#"><i class="fa fa-minus-square-o"></i></a>
+                      </center>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -72,44 +59,31 @@
             <div class="panel-body">
               <table class="table table-hover table-striped tablesorter">
                 <thead>
-                    <tr>
-                      <th><center>JAM</center></th>
-                      <th>SENIN</th>
-                      <th>SELASA</th>
-                      <th>RABU</th>
-                      <th>KAMIS</th>
-                      <th>JUM'AT</th>
-                      <th>SABTU</th>
-                    </tr>
+                  <tr>
+                    <th>JAM</th>
+                    <th>SENIN</th>
+                    <th>SELASA</th>
+                    <th>RABU</th>
+                    <th>KAMIS</th>
+                    <th>JUM'AT</th>
+                    <th>SABTU</th>
+                  </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>RPL/</td>
-                      <td>2011</td>
-                      <td>asisten</td>
-                      <td>toriqbagus@gmail.com</td>
-                      <td>085755228747</td>
-                      <td>
-                        <center>
-                          <a href="#"><i class="fa fa-edit"></i></a>
-                          <a href="#"><i class="fa fa-minus-square-o"></i></a>
-                        </center>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>toriq bagus</td>
-                      <td>2011</td>
-                      <td>asisten</td>
-                      <td>toriqbagus@gmail.com</td>
-                      <td>085755228747</td>
-                      <td>
-                        <center>
-                          <a href="#"><i class="fa fa-edit"></i></a>
-                          <a href="#"><i class="fa fa-minus-square-o"></i></a>
-                        </center>
-                      </td>
-                    </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>RPL</td>
+                    <td>2011</td>
+                    <td>asisten</td>
+                    <td>toriqbagus@gmail.com</td>
+                    <td>085755228747</td>
+                    <td>
+                      <center>
+                        <a href="#"><i class="fa fa-edit"></i></a>
+                        <a href="#"><i class="fa fa-minus-square-o"></i></a>
+                      </center>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>

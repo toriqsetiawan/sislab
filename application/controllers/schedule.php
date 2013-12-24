@@ -12,23 +12,14 @@ class Schedule extends CI_Controller {
     
     function index()
     {
-        $data = $this->load_data();
-
-        $this->home($data);
+        $this->home();
     }
 
-    private function home($data)
+    private function home()
     {
         $this->load->view('admin/header');
-        $this->load->view('admin/schedule_view', array('data' => $data));
+        $this->load->view('admin/schedule_view');
         $this->load->view('admin/footer');
-    }
-
-    private function load_data()
-    {
-        $this->load->model('schedule_model');
-        $data = $this->schedule_model->load_lesson();
-        return $data;
     }
 }
 ?>

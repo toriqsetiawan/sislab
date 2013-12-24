@@ -46,9 +46,9 @@ $route['e-admin'] = "login";
 $route['edit_asisten/(:num)'] = "edit_asisten";
 $route['edit_dosen/(:num)'] = "edit_dosen";
 // route add lesson
-$route['add_lesson/(:num)'] = "add_lesson";
+$route['add_lesson/([1-7]+)'] = "add_lesson";
 // route edit lesson
-$route['edit_lesson/(:num)'] = "edit_lesson";
+$route['edit_lesson/([1-7]+)'] = "edit_lesson";
 // block redirect login
 $route['login'] = "error/page_missing";
 $route['login/index'] = "error/page_missing";

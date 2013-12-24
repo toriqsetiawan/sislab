@@ -36,6 +36,8 @@
             </ul>
             <div class="top-scroll">
               <a href="#top"><i class="fa fa-arrow-circle-o-up scroll fa-3x"></i></a>
+              <br>
+              <label>Back On Top</label>
             </div>
             <hr>
             <p>Copyright &copy; Lab Informatika - UMM <?php echo date('Y'); ?></p>

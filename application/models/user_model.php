@@ -35,16 +35,27 @@ class User_model extends CI_Model {
       
       if ($user == 'asisten') {
         while($row = mysql_fetch_array($query)) {
-          $data[$i] = array('asisten_id' => $row['asisten_id'], 'username' => $row['username'], 'password' => $row['password'], 'name' => $row['name'], 
-                                'grade' => $row['grade'], 'email' => $row['email'], 'address' => $row['address'], 'phone' => $row['phone']);
+          $data[$i] = array('asisten_id' => $row['asisten_id'], 
+                            'username' => $row['username'], 
+                            'password' => $row['password'], 
+                            'name' => $row['name'], 
+                            'grade' => $row['grade'], 
+                            'email' => $row['email'], 
+                            'address' => $row['address'], 
+                            'phone' => $row['phone']);
           $i++;
         }
         return $data;
       }
       if ($user == 'dosen') {
         while($row = mysql_fetch_array($query)) {
-          $data[$i] = array('dosen_id' => $row['dosen_id'], 'username' => $row['username'], 'password' => $row['password'], 'name' => $row['name'], 
-                                'email' => $row['email'], 'address' => $row['address'], 'phone' => $row['phone']);
+          $data[$i] = array('dosen_id' => $row['dosen_id'], 
+                            'username' => $row['username'], 
+                            'password' => $row['password'], 
+                            'name' => $row['name'], 
+                            'email' => $row['email'], 
+                            'address' => $row['address'], 
+                            'phone' => $row['phone']);
           $i++;
         }
         return $data;
@@ -60,8 +71,14 @@ class User_model extends CI_Model {
     {
       $query = mysql_query("SELECT * from asisten WHERE asisten_id='$id'");
       $row = mysql_fetch_assoc($query);
-      $data = array('asisten_id' => $row['asisten_id'], 'username' => $row['username'], 'password' => $row['password'], 'name' => $row['name'],
-                    'grade' => $row['grade'], 'email' => $row['email'], 'address' => $row['address'], 'phone' => $row['phone']);
+      $data = array('asisten_id' => $row['asisten_id'], 
+                    'username' => $row['username'], 
+                    'password' => $row['password'], 
+                    'name' => $row['name'],
+                    'grade' => $row['grade'], 
+                    'email' => $row['email'], 
+                    'address' => $row['address'], 
+                    'phone' => $row['phone']);
       return $data;
     }
 
@@ -69,8 +86,13 @@ class User_model extends CI_Model {
     {
       $query = mysql_query("SELECT * from dosen WHERE dosen_id='$id'");
       $row = mysql_fetch_assoc($query);
-      $data = array('dosen_id' => $row['dosen_id'], 'username' => $row['username'], 'password' => $row['password'], 'name' => $row['name'],
-                    'email' => $row['email'], 'address' => $row['address'], 'phone' => $row['phone'] );
+      $data = array('dosen_id' => $row['dosen_id'], 
+                    'username' => $row['username'], 
+                    'password' => $row['password'], 
+                    'name' => $row['name'],
+                    'email' => $row['email'], 
+                    'address' => $row['address'], 
+                    'phone' => $row['phone'] );
       return $data;
     }
 

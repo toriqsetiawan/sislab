@@ -53,7 +53,7 @@ class Lesson extends CI_Controller {
     {
         $this->load->model('lesson_model');
         $data = $this->lesson_model->get_dosen_name($i);
-        return $data['name'];
+        return $data;
     }
 
     private function get_asisten($i)
