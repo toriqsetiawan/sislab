@@ -45,10 +45,14 @@ $route['e-admin'] = "login";
 // route edit user
 $route['edit_asisten/(:num)'] = "edit_asisten";
 $route['edit_dosen/(:num)'] = "edit_dosen";
+// route delete user
+$route['delete_user/([a-z]+)/(\d+)'] = "delete_user";
 // route add lesson
 $route['add_lesson/([1-7]+)'] = "add_lesson";
 // route edit lesson
 $route['edit_lesson/([1-7]+)'] = "edit_lesson";
+// route delete lesson
+$route['delete_lesson/(:num)'] = "delete_lesson";
 // block redirect login
 $route['login'] = "error/page_missing";
 $route['login/index'] = "error/page_missing";

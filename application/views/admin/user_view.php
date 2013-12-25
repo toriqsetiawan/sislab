@@ -43,12 +43,32 @@
 					                    <td>
 					                    	<center>
 					                    		<a href="<?php echo base_url(); ?>edit_asisten/<?php echo $asisten[$i]['asisten_id']; ?>"><i class="fa fa-edit"></i></a>
-					                    		<a href=""><i class="fa fa-minus-square-o"></i></a>
+					                    		<a id="modal-<?php echo $i; ?>" href="#modal-container-<?php echo $i; ?>" role="button" data-toggle="modal"><i class="fa fa-minus-square-o"></i></a>
 					                    	</center>
 					                    </td>
 					                </tr>  
+					                <!-- delete modal -->
+					                <div class="modal fade" id="modal-container-<?php echo $i; ?>" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+													<h4 class="modal-title" id="myModalLabel">
+														Delete Asisten
+													</h4>
+												</div>
+												<div class="modal-body">
+													Are you sure want to delete <b>"<?php echo $asisten[$i]['name']; ?>"</b> ?
+												</div>
+												<div class="modal-footer">
+													 <button type="button" class="btn btn-default" data-dismiss="modal">No</button> 
+													 <a href="<?php echo base_url(); ?>delete_user/asisten/<?php echo $asisten[$i]['asisten_id']; ?>" type="button" class="btn btn-primary">Yes</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- end of delete modal -->
 				                	<?php } ?>
-				                  	
 				                </tbody>
 			              	</table>
 						</div>
@@ -83,10 +103,30 @@
 					                    <td>
 					                    	<center>
 					                    		<a href="<?php echo base_url(); ?>edit_dosen/<?php echo $dosen[$i]['dosen_id']; ?>"><i class="fa fa-edit"></i></a>
-					                    		<a href=""><i class="fa fa-minus-square-o"></i></a>
+					                    		<a id="modal-d-<?php echo $i; ?>" href="#modal-dosen-<?php echo $i; ?>" role="button" data-toggle="modal"><i class="fa fa-minus-square-o"></i></a>
 					                    	</center>
 					                    </td>
 				                  	</tr>
+				                  	<!-- delete modal -->
+					                <div class="modal fade" id="modal-dosen-<?php echo $i; ?>" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+													<h4 class="modal-title" id="myModalLabel">
+														Delete Dosen
+													</h4>
+												</div>
+												<div class="modal-body">
+													Are you sure want to delete <b>"<?php echo $dosen[$i]['name']; ?>"</b> ?
+												</div>
+												<div class="modal-footer">
+													 <button type="button" class="btn btn-default" data-dismiss="modal">No</button> 
+													 <a href="<?php echo base_url(); ?>delete_user/dosen/<?php echo $dosen[$i]['dosen_id']; ?>" type="button" class="btn btn-primary">Yes</a>
+												</div>
+											</div>
+										</div>
+									</div>
 				                  	<?php } ?>
 				                </tbody>
 			              	</table>

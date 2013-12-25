@@ -37,6 +37,13 @@ class Lesson_model extends CI_Model {
         return true;
     }
 
+    function delete_data($id)
+    {
+        $this->db->where('mk_id', $id);
+        $this->db->delete('mk');
+        return true;
+    }
+
     function get_count()
     {
         return $count = $this->db->count_all('mk');
