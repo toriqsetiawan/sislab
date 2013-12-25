@@ -25,10 +25,17 @@ class Add_user extends CI_Controller {
         $phone = $this->security->xss_clean($this->input->post('phone'));
 
         if($username!="" && $password!="" && $name!="" && $grade!="" && $email!="" && $address!="" && $phone!="") {
-            $data = array('username' => $username, 'password' => md5($password), 'name' => $name, 'grade' => $grade,
+            $this->load->model('user_model');
+            $asisten_id = NULL;
+            $temp = $this->user_model->get_temp('asisten');
+            if ($temp != '') {
+                $asisten_id = $temp;
+            }
+
+            $data = array('asisten_id' => $asisten_id, 'username' => $username, 'password' => md5($password), 'name' => $name, 'grade' => $grade,
                             'email' => $email, 'address' => $address, 'phone' => $phone);
 
-            $this->load->model('user_model');
+            
             $result = $this->user_model->set_data('asisten', $data);
 
             if ($result) {
@@ -67,10 +74,16 @@ class Add_user extends CI_Controller {
         $phone = $this->security->xss_clean($this->input->post('phone'));
 
         if($username!="" && $password!="" && $name!="" && $email!="" && $address!="" && $phone!="") {
-            $data = array('username' => $username, 'password' => md5($password), 'name' => $name, 'email' => $email, 
+            $this->load->model('user_model');
+            $dosen_id = NULL;
+            $temp = $this->user_model->get_temp('dosen');
+            if ($temp != '') {
+                $dosen_id = $temp;
+            }
+            $data = array('dosen_id' => $dosen_id, 'username' => $username, 'password' => md5($password), 'name' => $name, 'email' => $email, 
                             'address' => $address, 'phone' => $phone);
             
-            $this->load->model('user_model');
+            
             $result = $this->user_model->set_data('dosen', $data);
 
             if ($result) {

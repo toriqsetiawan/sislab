@@ -25,7 +25,9 @@ class Delete_user extends CI_Controller {
     private function delete_data($id, $user)
     {
         $this->load->model('user_model');
+        $this->user_model->set_temp(array('temp_id' => $id), $user);
         $result = $this->user_model->delete_data($id, $user);
+
 
         if ($result) {
             $msg = '<div class="alert alert-success alert-dismissable">

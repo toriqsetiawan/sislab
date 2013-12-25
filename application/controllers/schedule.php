@@ -12,13 +12,17 @@ class Schedule extends CI_Controller {
     
     function index()
     {
-        $this->home();
+        $this->load->model('schedule_model');
+        $lesson = $this->schedule_model->load_lesson();
+        $schedule = $this->schedule_model->load_schedule();
+        
+        $this->home($lesson, $schedule);
     }
 
-    private function home()
+    private function home($lesson, $schedule)
     {
         $this->load->view('admin/header');
-        $this->load->view('admin/schedule_view');
+        $this->load->view('admin/schedule_view', array('$lesson' => $lesson , 'schedule' => $schedule));
         $this->load->view('admin/footer');
     }
 }

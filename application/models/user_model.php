@@ -12,6 +12,31 @@ class User_model extends CI_Model {
       return true;
     }
 
+    function set_temp($id, $user)
+    {
+      $this->db->insert('temp_'.$user, $id);
+    }
+
+    function get_temp($user)
+    {
+      $data = '';
+      $query = $this->db->get('temp_'.$user);
+      if($query->num_rows != 0) {
+        $row = $query->row();
+        $data = $row->temp_id;
+      }
+
+      $this->delete_temp($data, $user);
+
+      return $data;
+    }
+
+    private function delete_temp($id, $user)
+    {
+      $this->db->where('temp_id', $id);
+      $this->db->delete('temp_'.$user);
+    }
+
     function update_data($id, $user, $data)
     {
       $this->db->where($user.'_id', $id);
@@ -99,6 +124,7 @@ class User_model extends CI_Model {
     function get_name($user)
     {
       $i = 0;
+      $data = array();
       $query = mysql_query("SELECT ".$user."_id, name from $user");
       while($row = mysql_fetch_array($query)) {
         $data[$i] = array($user.'_id' => $row[$user.'_id'], 'name' => $row['name']);

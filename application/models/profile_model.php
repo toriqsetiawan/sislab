@@ -15,7 +15,9 @@ class Profile_model extends CI_Model {
         $query = mysql_query("SELECT * from admin where username='$username' and password='$password'");
         // Let's check if there are any results
         $data = mysql_fetch_assoc($query);
-        $new_data = array('email' => $data['email'], 'address' => $data['address'], 'phone' => $data['phone']);
+        $new_data = array('email' => $data['email'], 
+                          'address' => $data['address'], 
+                          'phone' => $data['phone']);
 
         return $new_data;
     }

@@ -9,6 +9,7 @@ class Lesson_model extends CI_Model {
     function load_data()
     {
     	$i=0;
+        $data = array();
     	$query = mysql_query("SELECT * from mk ORDER BY name ASC");
     	while($row = mysql_fetch_array($query)) {
           $data[$i] = array('mk_id' => $row['mk_id'], 
@@ -19,9 +20,7 @@ class Lesson_model extends CI_Model {
                             'semester' => $row['semester']);
           $i++;
         }
-        if ($i != 0) {
-            return $data;
-        }
+        return $data;
     }
 
     function set_data($data)
