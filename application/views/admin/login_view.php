@@ -14,7 +14,16 @@
 		<form action='<?php echo base_url();?>login/process' method='post' name='process'>
 			<h1>Login Form</h1>
 			<br>
-			<?php if(! is_null($msg)) echo $msg;?>
+			<?php 
+				if(! is_null($msg)) {
+					echo $msg;
+					echo '<script type="text/javascript">
+					   		setInterval(function(){
+					   			window.location.href = "/sislab/e-admin";
+					   		},1500);
+						  </script>';
+				}
+			?>
 			<br>
 			<div>
 				<input type="hidden" id="login" name="login" value="<?php echo $token; ?>" />

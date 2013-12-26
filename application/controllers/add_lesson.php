@@ -33,7 +33,13 @@ class Add_lesson extends CI_Controller {
         $semester = $this->security->xss_clean($this->input->post('semester'));
 
         if($dosen!=0 && $name!="" && $class!="" && $semester!="") {
-            $data = array('dosen_id' => $dosen, 'name' => $name, 'asisten_id' => $new_asisten, 'class' => $class, 'semester' => $semester);
+            $this->load->model('lesson_model');
+            $mk_id = NULL;
+            $temp = $this->lesson_model->get_temp();
+            if ($temp != '') {
+                $mk_id = $temp;
+            }
+            $data = array('mk_id' => $mk_id, 'dosen_id' => $dosen, 'name' => $name, 'asisten_id' => $new_asisten, 'class' => $class, 'semester' => $semester);
 
             $this->load->model('lesson_model');
             $result = $this->lesson_model->set_data($data);

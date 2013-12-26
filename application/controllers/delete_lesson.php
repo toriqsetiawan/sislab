@@ -18,6 +18,7 @@ class Delete_lesson extends CI_Controller {
     private function delete_data($id)
     {
         $this->load->model('lesson_model');
+        $this->lesson_model->set_temp(array('temp_id' => $id));
         $result = $this->lesson_model->delete_data($id);
 
         if ($result) {

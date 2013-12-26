@@ -43,6 +43,31 @@ class Lesson_model extends CI_Model {
         return true;
     }
 
+    function set_temp($id)
+    {
+      $this->db->insert('temp_lesson', $id);
+    }
+
+    function get_temp()
+    {
+      $data = '';
+      $query = $this->db->get('temp_lesson');
+      if($query->num_rows != 0) {
+        $row = $query->row();
+        $data = $row->temp_id;
+      }
+
+      $this->delete_temp($data);
+
+      return $data;
+    }
+
+    private function delete_temp($id)
+    {
+      $this->db->where('temp_id', $id);
+      $this->db->delete('temp_lesson');
+    }
+
     function get_count()
     {
         return $count = $this->db->count_all('mk');
