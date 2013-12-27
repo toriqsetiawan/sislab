@@ -21,7 +21,8 @@
               			if ($msg == "success") {
               				echo '<script type="text/javascript">
           								   		setInterval(function(){
-          								   			window.location.href = "/sislab/profile/refresh_image";
+          								   			window.location.href = "'.base_url().'profile";
+                                  
           								   		},1500);
           									</script>';
               			}

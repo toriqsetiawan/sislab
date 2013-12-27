@@ -30,29 +30,34 @@ class Profile extends CI_Controller {
 
     function update()
     {
-        $this->load->model('profile_model');
-        $result = $this->profile_model->update_admin();
-        if ($result) {
-            $msg = '<div class="alert alert-success alert-dismissable">
-                        <h4>
-                            <center>Success</center>
-                        </h4>
-                    </div>';
+        $username = $this->input->post('username');
+        if ($username != "") {
+            $this->load->model('profile_model');
+            $result = $this->profile_model->update_admin();
+            if ($result) {
+                $msg = '<div class="alert alert-success alert-dismissable">
+                            <h4>
+                                <center>Success</center>
+                            </h4>
+                        </div>';
+            }
+            else {
+                $msg = '<div class="alert alert-danger alert-dismissable">
+                            <h4>
+                                <center>Failure</center>
+                            </h4>
+                        </div>';
+            }
         }
         else {
             $msg = '<div class="alert alert-danger alert-dismissable">
-                        <h4>
-                            <center>Failure</center>
-                        </h4>
-                    </div>';
+                            <h4>
+                                <center>Please fill all field</center>
+                            </h4>
+                        </div>';
         }
         $this->session->set_userdata('msg', $msg);
         $this->home();
-    }
-
-    function refresh_image()
-    {
-        redirect('profile', 'refresh');
     }
 }
 ?>

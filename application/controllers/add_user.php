@@ -24,7 +24,7 @@ class Add_user extends CI_Controller {
         $address = $this->security->xss_clean($this->input->post('address'));
         $phone = $this->security->xss_clean($this->input->post('phone'));
 
-        if($username!="" && $password!="" && $name!="" && $grade!="" && $email!="" && $address!="" && $phone!="") {
+        if($username!="" && $password!="" && $name!="" && $grade!="") {
             $this->load->model('user_model');
             $asisten_id = NULL;
             $temp = $this->user_model->get_temp('asisten');
@@ -73,7 +73,7 @@ class Add_user extends CI_Controller {
         $address = $this->security->xss_clean($this->input->post('address'));
         $phone = $this->security->xss_clean($this->input->post('phone'));
 
-        if($username!="" && $password!="" && $name!="" && $email!="" && $address!="" && $phone!="") {
+        if($username!="" && $password!="" && $name!="") {
             $this->load->model('user_model');
             $dosen_id = NULL;
             $temp = $this->user_model->get_temp('dosen');

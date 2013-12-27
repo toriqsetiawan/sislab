@@ -54,6 +54,7 @@ class Upload extends CI_Controller {
 				                            </h4>
 				                        </div>',
 						   'msg' => "success");
+
 			$this->load->view('admin/header');
 			$this->load->view('admin/upload_form', $error);
 			$this->load->view('admin/footer');

@@ -6,6 +6,14 @@ class Lesson_model extends CI_Model {
         parent::__construct();
     }
     
+    function get_id($name, $class)
+    {
+        $query = mysql_query("SELECT mk_id FROM mk WHERE name='$name' AND class='$class'");
+        $row = mysql_fetch_assoc($query);
+        $data = array('mk_id' => $row['mk_id']);
+        return $data;
+    }
+
     function load_data()
     {
     	$i=0;

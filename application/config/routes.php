@@ -53,6 +53,8 @@ $route['add_lesson/([1-7]+)'] = "add_lesson";
 $route['edit_lesson/([1-7]+)'] = "edit_lesson";
 // route delete lesson
 $route['delete_lesson/(:num)'] = "delete_lesson";
+// route add jadwal
+$route['add_schedule/([1-2]+)'] = "add_schedule";
 // block redirect login
 $route['login'] = "error/page_missing";
 $route['login/index'] = "error/page_missing";

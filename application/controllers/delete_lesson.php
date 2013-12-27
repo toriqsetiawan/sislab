@@ -36,6 +36,10 @@ class Delete_lesson extends CI_Controller {
                     </div>';
         }
         $this->session->set_userdata('msg', $msg);
+
+        $this->load->model('schedule_model');
+        $this->schedule_model->reset_data($id);
+
         redirect('lesson');
     }
 }

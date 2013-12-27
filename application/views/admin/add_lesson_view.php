@@ -23,7 +23,7 @@
 								echo $data['msg'];
 								echo '<script type="text/javascript">
 								   		setInterval(function(){
-								   			window.location.href = "/sislab/lesson";
+								   			window.location.href = "'.base_url().'lesson";
 								   		},1500);
 									  </script>';
 							}
@@ -32,13 +32,13 @@
                 		<div class="form-group">
 							 <label for="name" class="col-sm-3 control-label">Name</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="name" name="name" value="" />
+								<input type="text" class="form-control" required="" id="name" name="name" value="" />
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="class" class="col-sm-3 control-label">Class</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="class" name="class" value="" />
+								<input type="text" class="form-control" required="" id="class" name="class" value="" />
 							</div>
 						</div>
 						<div class="form-group">

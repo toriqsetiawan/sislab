@@ -23,7 +23,7 @@
 								echo $msg;
 								echo '<script type="text/javascript">
 								   		setInterval(function(){
-								   			window.location.href = "/sislab/user";
+								   			window.location.href = "'.base_url().'user";
 								   		},1500);
 									  </script>';
 							}
@@ -32,43 +32,43 @@
                 		<div class="form-group">
 							 <label for="username" class="col-sm-3 control-label">Username</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="username" name="username" value="" />
+								<input type="text" class="form-control" required="" id="username" name="username" value="" />
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="password" class="col-sm-3 control-label">Password</label>
 							<div class="col-sm-9">
-								<input type="password" class="form-control" id="password" name="password" value="" />
+								<input type="password" class="form-control" required="" id="password" name="password" value="" />
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="name" class="col-sm-3 control-label">Name</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="name" name="name" value="" />
+								<input type="text" class="form-control" required="" id="name" name="name" value="" />
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="grade" class="col-sm-3 control-label">Grade</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="grade" name="grade" placeholder="2012/2011/2010" value="" />
+								<input type="number" class="form-control" required="" id="grade" name="grade" placeholder="2012/2011/2010" value="" />
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="email" class="col-sm-3 control-label">Email</label>
 							<div class="col-sm-9">
-								<input type="email" class="form-control" id="email" name="email" value="" />
+								<input type="email" class="form-control" id="email" name="email" value="" placeholder="optional"/>
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="address" class="col-sm-3 control-label">Address</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="address" name="address" value="" />
+								<input type="text" class="form-control" id="address" name="address" value="" placeholder="optional"/>
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="phone" class="col-sm-3 control-label">Phone</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="phone" name="phone" value="" />
+								<input type="text" class="form-control" id="phone" name="phone" value="" placeholder="optional"/>
 							</div>
 						</div>
 						<div class="form-group">

@@ -23,7 +23,7 @@
 								echo $data['msg'];
 								echo '<script type="text/javascript">
 								   		setInterval(function(){
-								   			window.location.href = "/sislab/lesson";
+								   			window.location.href = "'.base_url().'lesson";
 								   		},1500);
 									  </script>';
 							}

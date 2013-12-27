@@ -14,7 +14,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <a class="panel-title" data-toggle="collapse" data-parent="#panel-schedule" href="#panel-element-lab-a">Lab 1</a>
-            <a href="#" class="btn btn-primary btn-sm" style="float:right;"><i class="fa fa-file"></i> add schedule</a>
+            <a href="<?php echo base_url(); ?>add_schedule/1" class="btn btn-primary btn-sm" style="float:right;"><i class="fa fa-file"></i> add schedule</a>
           </div>
           <div id="panel-element-lab-a" class="panel-collapse collapse">
             <div class="panel-body">
@@ -22,29 +22,39 @@
                 <thead>
                   <tr>
                     <th>JAM</th>
-                    <th>SENIN</th>
-                    <th>SELASA</th>
-                    <th>RABU</th>
-                    <th>KAMIS</th>
-                    <th>JUM'AT</th>
-                    <th>SABTU</th>
+                    <?php for ($i=0; $i < 5; $i++) { ?> 
+                    <th><?php echo $day[$i]['name']; ?></th>
+                    <?php } ?>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php for ($i=0; $i < 14; $i++) { ?>
                   <tr>
-                    <td>1</td>
-                    <td>RPL</td>
-                    <td>2011</td>
-                    <td>asisten</td>
-                    <td>toriqbagus@gmail.com</td>
-                    <td>085755228747</td>
-                    <td>
-                      <center>
-                        <a href="#"><i class="fa fa-edit"></i></a>
-                        <a href="#"><i class="fa fa-minus-square-o"></i></a>
-                      </center>
-                    </td>
+                    <td><?php echo $i+1; ?></td>
+
+                    <?php for ($j=1; $j <= 5; $j++) { ?>
+                      <td>
+                        <?php 
+                          $status = false;
+                          for ($x=0; $x < 14; $x++) { 
+                            if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                              $status = true;
+                              echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];
+                            } 
+                            if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                              $status = true;
+                              echo $data[$x]['dosen_id'];
+                            } 
+                          }
+                          if ($status == false) {
+                            echo "";
+                          }
+                        ?>
+                      </td>
+                    <?php } ?>
+
                   </tr>
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
@@ -53,7 +63,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <a class="panel-title" data-toggle="collapse" data-parent="#panel-schedule" href="#panel-element-lab-b">Lab 2</a>
-            <a href="#" class="btn btn-primary btn-sm" style="float:right;"><i class="fa fa-file"></i> add schedule</a>
+            <a href="<?php echo base_url(); ?>add_schedule/2" class="btn btn-primary btn-sm" style="float:right;"><i class="fa fa-file"></i> add schedule</a>
           </div>
           <div id="panel-element-lab-b" class="panel-collapse collapse">
             <div class="panel-body">
@@ -61,29 +71,39 @@
                 <thead>
                   <tr>
                     <th>JAM</th>
-                    <th>SENIN</th>
-                    <th>SELASA</th>
-                    <th>RABU</th>
-                    <th>KAMIS</th>
-                    <th>JUM'AT</th>
-                    <th>SABTU</th>
+                    <?php for ($i=0; $i < 5; $i++) { ?>
+                    <th><?php echo $day[$i]['name']; ?></th>
+                    <?php } ?>
                   </tr>
                 </thead>
                 <tbody>
+                  <?php for ($i=0; $i < 14; $i++) { ?>
                   <tr>
-                    <td>1</td>
-                    <td>RPL</td>
-                    <td>2011</td>
-                    <td>asisten</td>
-                    <td>toriqbagus@gmail.com</td>
-                    <td>085755228747</td>
-                    <td>
-                      <center>
-                        <a href="#"><i class="fa fa-edit"></i></a>
-                        <a href="#"><i class="fa fa-minus-square-o"></i></a>
-                      </center>
-                    </td>
+                    <td><?php echo $i+1; ?></td>
+
+                    <?php for ($j=1; $j <= 5; $j++) { ?>
+                      <td>
+                        <?php 
+                          $status = false;
+                          for ($x=0; $x < 14; $x++) { 
+                            if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                              $status = true;
+                              echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];
+                            } 
+                            if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                              $status = true;
+                              echo $data[$x]['dosen_id'];
+                            } 
+                          }
+                          if ($status == false) {
+                            echo "";
+                          }
+                        ?>
+                      </td>
+                    <?php } ?>
+
                   </tr>
+                  <?php } ?>
                 </tbody>
               </table>
             </div>

@@ -19,7 +19,7 @@
 					echo $msg;
 					echo '<script type="text/javascript">
 					   		setInterval(function(){
-					   			window.location.href = "/sislab/e-admin";
+					   			window.location.href = "'.base_url().'e-admin";
 					   		},1500);
 						  </script>';
 				}

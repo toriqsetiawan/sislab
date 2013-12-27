@@ -28,7 +28,7 @@
 								echo $msg;
 								echo '<script type="text/javascript">
 								   		setInterval(function(){
-								   			window.location.href = "/sislab/profile";
+								   			window.location.href = "'.base_url().'profile";
 								   		},1500);
 									  </script>';
 							}
@@ -38,14 +38,13 @@
 						<div class="form-group">
 							 <label for="inputName" class="col-sm-2 control-label">Username</label>
 							<div class="col-sm-10">
-								<input type="hidden" id="login" name="login" value="<?php echo $token ?>">
-								<input type="text" class="form-control" id="username" name="username" value="<?php echo $username ?>"/>
+								<input type="text" class="form-control" required="" id="username" name="username" value="<?php echo $username ?>"/>
 							</div>
 						</div>
                 		<div class="form-group">
 							 <label for="inputName" class="col-sm-2 control-label">Name</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="name" name="name" value="<?php echo $name ?>"/>
+								<input type="text" class="form-control" required="" id="name" name="name" value="<?php echo $name ?>"/>
 							</div>
 						</div>
 						<div class="form-group">
