@@ -23,7 +23,7 @@
 								echo $data['msg'];
 								echo '<script type="text/javascript">
 								   		setInterval(function(){
-								   			window.location.href = "'.base_url().'lesson";
+								   			window.location.href = "'.base_url().'schedule";
 								   		},1500);
 									  </script>';
 							}
@@ -45,8 +45,8 @@
 							 <label for="name" class="col-sm-3 control-label">Name</label>
 							<div class="col-sm-9">
 								<select class="form-control" id="name" name="name">
-									<?php for ($i=0; $i < $count; $i++) { ?>
-										<option value="<?php echo $data[$i]['name']; ?>"><?php echo $data[$i]['name']; ?></option>
+									<?php for ($i=0; $i < $count_d['count']; $i++) { ?>
+										<option value="<?php echo $data_name[$i]['name']; ?>"><?php echo $data_name[$i]['name']; ?></option>
 									<?php } ?>
 								</select>
 							</div>
@@ -55,9 +55,15 @@
 							 <label for="class" class="col-sm-3 control-label">Class</label>
 							<div class="col-sm-9">
 								<select class="form-control" id="class" name="class">
-									<?php for ($i=0; $i < $count; $i++) { ?>
-										<option value="<?php echo $data[$i]['class']; ?>"><?php echo $data[$i]['class']; ?></option>
-									<?php } ?>
+									<option value="A">A</option>
+									<option value="B">B</option>
+									<option value="C">C</option>
+									<option value="D">D</option>
+									<option value="E">E</option>
+									<option value="F">F</option>
+									<option value="G">G</option>
+									<option value="H">H</option>
+									<option value="I">I</option>
 								</select>
 							</div>
 						</div>

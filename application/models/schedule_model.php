@@ -18,17 +18,20 @@ class Schedule_model extends CI_Model {
       return $this->db->count_all('schedule');
     }
 
-    function add_schedule($new_data)
+    function add_schedule($sch_id, $data)
     {
-      for ($i=0; $i < 14; $i++) { 
-        $data = $this->select_schedule($i);
-        if ($data['mk_id'] == 0 && $data['day_id'] == 0) {
-          $this->db->where('sch_id', $i+1);
-          $this->db->update('schedule', $new_data);
-          break;
-        }
-      }
+      $this->db->where('sch_id', $sch_id);
+      $this->db->update('schedule', $data);
+
       return true;
+    }
+
+    function get_count_distinct()
+    {
+        $query = mysql_query("SELECT count(distinct name) AS count FROM mk");
+        $row = mysql_fetch_assoc($query);
+        $data = array('count' => $row['count']);
+        return $data;
     }
 
     private function select_schedule($id)
@@ -83,6 +86,19 @@ class Schedule_model extends CI_Model {
       while ($row = mysql_fetch_assoc($query)) {
         $data[$i] = array('day_id' => $row['day_id'], 
                           'name' => $row['name']);
+        $i++;
+      }
+      return $data;
+    }
+
+    function get_sch_id()
+    {
+      $i=0;
+      $data = array();
+      $query = mysql_query("SELECT * FROM schedule");
+      while ($row = mysql_fetch_assoc($query)) {
+        $data[$i] = array('sch_id' => $row['sch_id'], 
+                          'mk_id' => $row['mk_id']);
         $i++;
       }
       return $data;

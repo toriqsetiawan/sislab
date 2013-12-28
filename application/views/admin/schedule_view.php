@@ -36,7 +36,7 @@
                       <td>
                         <?php 
                           $status = false;
-                          for ($x=0; $x < 14; $x++) { 
+                          for ($x=0; $x < $count; $x++) { 
                             if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j) {
                               $status = true;
                               echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];
@@ -85,7 +85,7 @@
                       <td>
                         <?php 
                           $status = false;
-                          for ($x=0; $x < 14; $x++) { 
+                          for ($x=0; $x < $count; $x++) { 
                             if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j) {
                               $status = true;
                               echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];

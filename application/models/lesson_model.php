@@ -31,6 +31,18 @@ class Lesson_model extends CI_Model {
         return $data;
     }
 
+    function load_name_mk()
+    {
+        $i=0;
+        $data = array();
+        $query = mysql_query("SELECT DISTINCT name from mk");
+        while($row = mysql_fetch_assoc($query)) {
+            $data[$i] = array('name' => $row['name']);
+            $i++;
+        }
+        return $data;
+    }
+
     function set_data($data)
     {
         $this->db->insert('mk', $data);
