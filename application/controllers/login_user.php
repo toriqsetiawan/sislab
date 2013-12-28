@@ -10,23 +10,23 @@ class Login_user extends CI_Controller {
         parent::__construct();
     }
     
-    function index($msg = NULL)
-    {
-    	if($this->session->userdata('validated') == true) {
-            redirect('home');
-        }
-        // load library session
-        $this->load->library('session');
-        // generate token
-        $token = $this->make_token();
-        // set token in session
-        $this->session->set_userdata('token', $token);
-        // generate array  variable 
-        $data = array('msg' => $msg, 
-                      'token' => $token);
-        // throw variable to view
-        $this->load->view('admin/login_view', $data);
-    }
+    // function index($msg = NULL)
+    // {
+    // 	if($this->session->userdata('validated') == true) {
+    //         redirect('home');
+    //     }
+    //     // load library session
+    //     $this->load->library('session');
+    //     // generate token
+    //     $token = $this->make_token();
+    //     // set token in session
+    //     $this->session->set_userdata('token', $token);
+    //     // generate array  variable 
+    //     $data = array('msg' => $msg, 
+    //                   'token' => $token);
+    //     // throw variable to view
+    //     $this->load->view('admin/login_view', $data);
+    // }
     
     function process()
     {
@@ -38,6 +38,7 @@ class Login_user extends CI_Controller {
         $result = $this->login_user_model->validate($user, $pass);
         // Now we verify the result
         if($result) {
+            $this->session->set_userdata('status', true);
             echo "ok";
         }
         else {
@@ -48,22 +49,25 @@ class Login_user extends CI_Controller {
     function logout()
     {
         // reset session
-    	$this->session->set_userdata('validated', false);
+        if($this->session->userdata('validated') == true) {
+            $this->session->set_userdata('validated', false);
+        }
+        $this->session->set_userdata('status', false);
     	$this->session->sess_destroy();
 
         // redirect to login area
-    	redirect('e-admin', 'refresh');
+    	redirect('/', 'refresh');
     }
 
-    private function make_token() {
-        // load scurity helper
-        $this->load->helper('string');
-        $this->load->helper('security');
-        // generate hash text
-        $text = random_string('alnum', 16);
-        $str = do_hash($text, 'md5');
-        // return secure variable
-        return $str;
-    }
+    // private function make_token() {
+    //     // load scurity helper
+    //     $this->load->helper('string');
+    //     $this->load->helper('security');
+    //     // generate hash text
+    //     $text = random_string('alnum', 16);
+    //     $str = do_hash($text, 'md5');
+    //     // return secure variable
+    //     return $str;
+    // }
 }
 ?>

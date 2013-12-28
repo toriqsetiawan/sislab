@@ -25,8 +25,10 @@ class Schedule_model extends CI_Model {
         if ($data['mk_id'] == 0 && $data['day_id'] == 0) {
           $this->db->where('sch_id', $i+1);
           $this->db->update('schedule', $new_data);
+          break;
         }
       }
+      return true;
     }
 
     private function select_schedule($id)

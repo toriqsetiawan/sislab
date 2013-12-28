@@ -1,7 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/* 
- * Description: Login controller class
- */
 
 class Fe_home extends CI_Controller {
     
@@ -12,12 +9,19 @@ class Fe_home extends CI_Controller {
     
     function index()
     {
-        $this->home();
+        if($this->session->userdata('validated') == true || $this->session->userdata('status') == true) {
+            $data = $this->session->all_userdata();
+            $data['status'] = "Logout"; 
+        } else {
+            $data['status'] = "Login";
+        }
+
+        $this->home($data);
     }
     
-    private function home()
+    private function home($data)
     {
-        $this->load->view('fe/fe-header');
+        $this->load->view('fe/fe-header', $data);
         $this->load->view('fe/fe-body');
         $this->load->view('fe/fe-footer');
     }

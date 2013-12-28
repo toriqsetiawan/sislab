@@ -39,9 +39,13 @@
 
     <!-- Side Menu -->
     <div class="list-menu">
-      <a href="#loginPopup" class="btn btn-link login-a">login</a>
-      <a href="#" id="myprofile" class="btn btn-link login-a">Profile</a>
-      <a href="#" id="myschedule" class="btn btn-link login-a">Schedule</a>
+        <?php if ($status == "Login") { ?>
+        <a href="#loginPopup" class="btn btn-link login-a"><?php echo $status; ?></a>
+        <?php } else { ?>
+        <a href="<?php echo base_url(); ?>login_user/logout" class="btn btn-link login-a"><?php echo $status; ?></a>
+        <a href="#" id="myprofile" class="btn btn-link login-a"><?php echo $name; ?></a>
+        <a href="#" id="myschedule" class="btn btn-link login-a">Schedule</a>
+        <?php } ?>
     </div>
     
     <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
