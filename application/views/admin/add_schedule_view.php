@@ -4,7 +4,7 @@
         	<h1>Schedule Management</h1>
         	<ol class="breadcrumb">
           		<li><i class="fa fa-home"></i> Homepage</li>
-          		<li><i class="fa fa-book"></i> Schedule</li>
+          		<li><i class="fa fa-table"></i> Schedule</li>
           		<li><i class="fa fa-plus-circle"></i> Add Schedule</li>
         	</ol>
       	</div>
@@ -34,10 +34,10 @@
 							<div class="col-sm-9">
 								<select id="day" name="day" class="form-control">
 									<option value="1">SENIN</option>
-									<option value="1">SELASA</option>
-									<option value="1">RABU</option>
-									<option value="1">KAMIS</option>
-									<option value="1">JUMAT</option>
+									<option value="2">SELASA</option>
+									<option value="3">RABU</option>
+									<option value="4">KAMIS</option>
+									<option value="5">JUMAT</option>
 								</select>
 							</div>
 						</div>
@@ -64,19 +64,10 @@
 									<option value="G">G</option>
 									<option value="H">H</option>
 									<option value="I">I</option>
+									<option value="J">J</option>
 								</select>
 							</div>
 						</div>
-						<!--<div class="form-group">
-							 <label for="semester" class="col-sm-3 control-label">Semester</label>
-							<div class="col-sm-9">
-								<select id="semester" name="semester" class="form-control">
-									<?php for ($i=0; $i < $count; $i++) { ?>
-										<option value="<?php echo $data[$i]['semester']; ?>"><?php echo $data[$i]['semester']; ?></option>
-									<?php } ?>
-								</select>
-							</div>
-						</div>-->
 						<div class="form-group">
 							 <label for="start" class="col-sm-3 control-label">Start Lesson</label>
 							<div class="col-sm-9">

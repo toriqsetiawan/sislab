@@ -27,43 +27,37 @@ class Add_schedule extends CI_Controller {
         $end = $this->security->xss_clean($this->input->post('end'));
         $lab_id = $this->security->xss_clean($this->input->post('labit'));
 
-        // if($dosen!=0 && $name!="" && $class!="" && $semester!="") {
-            $this->load->model('lesson_model');
-            $mk_id = $this->lesson_model->get_id($name, $class);
-            $sch_id = $this->validated_data();
-            // $mk_id = NULL;
-            // $temp = $this->lesson_model->get_temp();
-            // if ($temp != '') {
-            //     $mk_id = $temp;
-            // }
+        $this->load->model('lesson_model');
+        $mk_id = $this->lesson_model->get_id($name, $class);
 
-            $data = array('mk_id' => $mk_id['mk_id'], 'day_id' => $day, 'start' => $start, 'end' => $end, 'lab_id' => $lab_id);
+        $data = array('mk_id' => $mk_id['mk_id'], 'day_id' => $day, 'start' => $start, 'end' => $end, 'lab_id' => $lab_id);
 
-            $this->load->model('schedule_model');
-            $result = $this->schedule_model->add_schedule($sch_id, $data);
+        $this->load->model('schedule_model');
+        $value = $this->schedule_model->validated_id($data['mk_id']);
 
-            if ($result) {
-                $msg = '<div class="alert alert-success alert-dismissable">
-                            <h4>
-                                <center>Success</center>
-                            </h4>
-                        </div>';
-            }
-            else {
-                $msg = '<div class="alert alert-danger alert-dismissable">
-                            <h4>
-                                <center>Failure</center>
-                            </h4>
-                        </div>';
-            }
-        // }
-        // else {
-        //     $msg = '<div class="alert alert-danger alert-dismissable">
-        //                 <h4>
-        //                     <center>Please fill all field</center>
-        //                 </h4>
-        //             </div>';
-        // }
+        if ($value == true) {
+        	$result = $this->schedule_model->add_schedule($data);
+
+	        if ($result) {
+	            $msg = '<div class="alert alert-success alert-dismissable">
+	                        <h4>
+	                            <center>Success</center>
+	                        </h4>
+	                    </div>';
+	        } else {
+	            $msg = '<div class="alert alert-danger alert-dismissable">
+	                        <h4>
+	                            <center>Failure</center>
+	                        </h4>
+	                    </div>';
+	        }
+	    } else {
+	    	$msg = '<div class="alert alert-danger alert-dismissable">
+	                        <h4>
+	                            <center>Data Already Insert</center>
+	                        </h4>
+	                    </div>';
+	    }
         $this->session->set_userdata('msg', $msg);
         $this->add_dataset(); 
     }
@@ -90,17 +84,6 @@ class Add_schedule extends CI_Controller {
         $this->load->view('admin/add_schedule_view', array('data' => $data, 'lesson' => $lesson, 'day' => $day, 
                                                            'data_name' => $data_name, 'count' => $count, 'count_d' => $count_d));
         $this->load->view('admin/footer');
-    }
-
-    private function validated_data()
-    {
-        $this->load->model('schedule_model');
-        $data = $this->schedule_model->get_sch_id();
-        for ($i=0; $i < sizeof($data); $i++) { 
-            if ($data[$i]['mk_id'] == 0) {
-                return $data[$i]['sch_id'];
-            }
-        }
     }
 }
 ?>

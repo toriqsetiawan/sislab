@@ -18,7 +18,7 @@ class Lesson_model extends CI_Model {
     {
     	$i=0;
         $data = array();
-    	$query = mysql_query("SELECT * from mk ORDER BY name ASC");
+    	$query = mysql_query("SELECT * from mk ORDER BY name, class ASC");
     	while($row = mysql_fetch_array($query)) {
           $data[$i] = array('mk_id' => $row['mk_id'], 
                             'dosen_id' => $row['dosen_id'], 

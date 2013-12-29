@@ -37,11 +37,11 @@
                         <?php 
                           $status = false;
                           for ($x=0; $x < $count; $x++) { 
-                            if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                            if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 1) {
                               $status = true;
                               echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];
                             } 
-                            if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                            if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 1) {
                               $status = true;
                               echo $data[$x]['dosen_id'];
                             } 
@@ -86,11 +86,11 @@
                         <?php 
                           $status = false;
                           for ($x=0; $x < $count; $x++) { 
-                            if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                            if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 2) {
                               $status = true;
                               echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];
                             } 
-                            if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j) {
+                            if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 2) {
                               $status = true;
                               echo $data[$x]['dosen_id'];
                             } 
