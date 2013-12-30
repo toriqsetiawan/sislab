@@ -89,6 +89,8 @@ $(document).ready(function() {
             			$("#alert-msg").html("Success");
 	                } else if( result == "login") {
 	                	$("#alert-msg").html("Please Login");
+	                } else if( result == "admin") {
+	                	$("#alert-msg").html("You are Admin");
 	                } else {
 	                	$("#alert-msg").html("Failure");
 	                }	

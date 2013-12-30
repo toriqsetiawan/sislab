@@ -32,7 +32,8 @@ class Message extends CI_Controller {
     function add_msg()
     {
         $username = $this->session->userdata('username');
-        if($username != 0) {
+        $admin = $this->session->userdata('validated');
+        if($username != "" && $admin != true) {
             $message = $this->security->xss_clean($this->input->post('message'));
             $this->load->model('message_model');
             $testimony_id = NULL;
@@ -49,6 +50,8 @@ class Message extends CI_Controller {
             } else {
                 echo "nok";
             }
+        } elseif ($admin == true) {
+            echo "admin";
         } else {
             echo "login";
         }
