@@ -46,7 +46,7 @@
 							 <label for="semester" class="col-sm-3 control-label">Semester</label>
 							<div class="col-sm-9">
 								<select id="semester" name="semester" class="form-control">
-									<option value="<?php echo $this->session->userdata('semester'); ?>">Semester <?php echo $this->session->userdata('semester'); ?></option>
+									<option value="<?php echo $n_data['semester']; ?>">Semester <?php echo $n_data['semester']; ?></option>
 								</select>
 							</div>
 						</div>
