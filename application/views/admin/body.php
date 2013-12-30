@@ -15,6 +15,6 @@
             <br><br>
             <center><a href="<?php echo base_url(); ?>" target="_blank">Goto Your Site</a></center>
           </div>
-        </div>
+        </div><!-- /.row -->
       </div><!-- /#page-wrapper -->
     </div><!-- /#wrapper -->

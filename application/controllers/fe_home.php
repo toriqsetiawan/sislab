@@ -22,7 +22,7 @@ class Fe_home extends CI_Controller {
     private function home($data)
     {
         $this->load->view('fe/fe-header', $data);
-        $this->load->view('fe/fe-body');
+        $this->load->view('fe/fe-body', $data);
         $this->load->view('fe/fe-footer');
     }
 }

@@ -136,7 +136,48 @@
     <!-- /Portfolio -->
     
     <!-- Contact -->
-    <div id="contact">
-      <h1><center>Contact Us</center></h1>
+    <div id="contact" class="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <h2>Contact Us</h2>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <a href="https://www.google.com/maps/preview#!data=!1m4!1m3!1d3111!2d112.5972775!3d-7.9212105!2m1!1e3&fid=7">
+              <img class="img-responsive" src="<?php echo base_url(); ?>assets/image/fe/maps.jpg">
+            </a>
+          </div>
+          <div class="col-md-6 text-center">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-4">
+                    <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <h2 id="alert-msg">Message</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer announcement-bottom">
+                <div class="row">
+                  <div class="col-md-12">
+                    <form role="form" method="post">
+                      <div class="form-group">
+                         <label for="message" style="color:#468847;"><h3>Your Message</h3></label>
+                         <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                      </div>
+                      <button type="submit" id="submit-msg" class="btn btn-success">Submit</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /Contact -->

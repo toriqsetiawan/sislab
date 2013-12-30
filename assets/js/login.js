@@ -66,6 +66,40 @@ $(document).ready(function() {
             });
         }
     });
+	
+	$("#submit-msg").click(function(e) {
+        e.preventDefault();
+        usermsg = $("#message").val();
+
+        if(usermsg==''){
+            $("#alert-msg").html("Please fill Message field");
+            setInterval(function(){
+	   			$("#alert-msg").html("Message");
+	   		},2000);
+        }
+        else {
+            var datastr = 'message='+usermsg; 
+            $.ajax({
+                url: 'message/add_msg',
+                type: 'POST',
+                data: datastr,
+                dataType: 'text',
+                success:function(result) {
+                	if ( result == "ok" ) {
+            			$("#alert-msg").html("Success");
+	                } else if( result == "login") {
+	                	$("#alert-msg").html("Please Login");
+	                } else {
+	                	$("#alert-msg").html("Failure");
+	                }	
+	                setInterval(function(){
+			   			$("#status").hide();
+			   			window.location.href = "/sislab";
+			   		},2000);
+	            }
+            });
+        }
+    });
 }); // end of jQuery
 ;
 
