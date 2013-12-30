@@ -37,27 +37,43 @@
 
   <body>
 
-    <!-- Side Menu -->
-    <div class="list-menu">
-        <?php if ($status == "Login") { ?>
-        <a href="#loginPopup" class="btn btn-link login-a"><?php echo $status; ?></a>
-        <?php } else { ?>
-        <a href="<?php echo base_url(); ?>login_user/logout" class="btn btn-link login-a"><?php echo $status; ?></a>
-        <a href="#" id="myprofile" class="btn btn-link login-a"><?php echo $name; ?></a>
-        <a href="#" id="myschedule" class="btn btn-link login-a">Schedule</a>
-        <?php } ?>
-    </div>
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> 
+            <a class="navbar-brand" href="<?php echo base_url(); ?>">LAB - IT</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <?php if ($status == "Login") { ?>
+                    <li>
+                        <a href="#loginPopup" id="myLogin"><?php echo $status; ?></a>
+                    </li>
+                <?php } else { ?>
+                    <li>
+                        <a href="<?php echo base_url(); ?>login_user/logout" id="myLogout"><?php echo $status; ?></a>
+                    </li>
+                    <li>
+                        <a href="#" id="myprofile"><?php echo $name; ?></a>
+                    </li>
+                    <li>
+                        <a href="#" id="myschedule">Schedule</a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+        
+    </nav>
     
-    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
-    <div id="sidebar-wrapper">
-      <ul class="sidebar-nav">
-        <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
-        <li class="sidebar-brand"><a href="#">LAB - IT</a></li>
-        <li><a href="#top">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <!-- /Side Menu -->

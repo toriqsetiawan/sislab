@@ -134,20 +134,6 @@
       </div>
     </div>
     <!-- /Portfolio -->
-
-    <!-- Call to Action -->
-    <div class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 text-center">
-            <h3>The buttons below are impossible to resist.</h3>
-            <a href="#" class="btn btn-lg btn-default">Click Me!</a>
-            <a href="#" class="btn btn-lg btn-primary">Look at Me!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /Call to Action -->
     
     <!-- Contact -->
     <div id="contact">

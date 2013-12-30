@@ -50,7 +50,7 @@ $route['delete_user/([a-z]+)/(\d+)'] = "delete_user";
 // route add lesson
 $route['add_lesson/([1-7]+)'] = "add_lesson";
 // route edit lesson
-$route['edit_lesson/([1-7]+)'] = "edit_lesson";
+$route['edit_lesson/(:num)'] = "edit_lesson";
 // route delete lesson
 $route['delete_lesson/(:num)'] = "delete_lesson";
 // route add jadwal

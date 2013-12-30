@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 		$('#sequence').css('height', winY);
 
-		$('.login-a').click(function(){
+		$('#myLogin').click(function(){
 			var href = $(this).attr('href'),
 			popUp = $('.login-popup' + $(this).attr('href'))
 			popUp.fadeIn(300);
