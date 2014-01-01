@@ -35,7 +35,7 @@ class Edit_lesson extends CI_Controller {
         $new_asisten = $asisten1.",".$asisten2.",".$asisten3.",".$asisten4;
 
         if($name!="" && $class!="" && $semester!="" && $dosen!=0) {
-            $data = array('dosen_id' => $dosen, 'name' => $name, 'asisten_id' => $new_asisten, 'class' => $class, 'semester' => $semester);
+            $data = array('dosen_id' => $dosen, 'name' => strtoupper($name), 'asisten_id' => $new_asisten, 'class' => strtoupper($class), 'semester' => $semester);
 
             $this->load->model('lesson_model');
             $result = $this->lesson_model->update_data($id, $data);

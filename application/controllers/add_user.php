@@ -32,7 +32,7 @@ class Add_user extends CI_Controller {
                 $asisten_id = $temp;
             }
 
-            $data = array('asisten_id' => $asisten_id, 'username' => $username, 'password' => md5($password), 'name' => $name, 'grade' => $grade,
+            $data = array('asisten_id' => $asisten_id, 'username' => $username, 'password' => md5($password), 'name' => strtoupper($name), 'grade' => $grade,
                             'email' => $email, 'address' => $address, 'phone' => $phone);
 
             

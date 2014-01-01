@@ -34,7 +34,7 @@ class Edit_asisten extends CI_Controller {
             $password = md5($password);
         }
         
-        $data = array('asisten_id' => $id, 'username' => $username, 'password' => $password, 'name' => $name, 'grade' => $grade,
+        $data = array('asisten_id' => $id, 'username' => $username, 'password' => $password, 'name' => strtoupper($name), 'grade' => $grade,
                       'email' => $email, 'address' => $address, 'phone' => $phone);
         $result = $this->user_model->update_data($id, 'asisten', $data);
 

@@ -26,7 +26,7 @@ class Profile_model extends CI_Model {
     {
         $id = $this->security->xss_clean($this->session->userdata('id'));
         $username = $this->security->xss_clean($this->input->post('username'));
-        $name = $this->security->xss_clean($this->input->post('name'));
+        $name = $this->security->xss_clean(strtoupper($this->input->post('name')));
         $email = $this->security->xss_clean($this->input->post('email'));
         $address = $this->security->xss_clean($this->input->post('address'));
         $phone = $this->security->xss_clean($this->input->post('phone'));

@@ -5,6 +5,17 @@ class Lesson_model extends CI_Model {
     {
         parent::__construct();
     }
+
+    function validated_data($name, $class)
+    {
+        $data = 0;
+        $query = mysql_query("SELECT * FROM mk WHERE name='$name' AND class='$class'");
+        $row = mysql_fetch_assoc($query);
+        if ($row) {
+            $data = $row['mk_id'];
+        }
+        return $data;
+    }
     
     function get_id($name, $class)
     {

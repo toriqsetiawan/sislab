@@ -37,7 +37,13 @@ class Fe_schedule extends CI_Controller {
 
             $result = $this->lesson_model->get_asisten_name($data[$i]['asisten_id']);
             $name = explode(", ", $result);
-
+            $new_name = "";
+            for ($z=0; $z < sizeof($name); $z++) { 
+                $new_name .= $name[$z];
+                if(sizeof($name)-$z != 1) {
+                   $new_name .= "<br>"; 
+                }
+            }
             for ($k=0; $k < sizeof($name); $k++) { 
                 $d_name = $this->lesson_model->get_dosen_name($data[$i]['dosen_id']);
                 if($name[$k] == $this->session->userdata('name') || $d_name == $this->session->userdata('name')) {
@@ -52,7 +58,7 @@ class Fe_schedule extends CI_Controller {
                         $new_data[$j] = array('time' => $time, 
                                               'day' => $day, 
                                               'd_name' => $d_name, 
-                                              'a_name' => $result,
+                                              'a_name' => $new_name,
                                               'name' => $data[$i]['name'], 
                                               'class' => $data[$i]['class'], 
                                               'semester' => $data[$i]['semester'],

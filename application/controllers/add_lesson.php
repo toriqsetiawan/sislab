@@ -39,22 +39,33 @@ class Add_lesson extends CI_Controller {
             if ($temp != '') {
                 $mk_id = $temp;
             }
-            $data = array('mk_id' => $mk_id, 'dosen_id' => $dosen, 'name' => $name, 'asisten_id' => $new_asisten, 'class' => $class, 'semester' => $semester);
+            $data = array('mk_id' => $mk_id, 'dosen_id' => $dosen, 'name' => strtoupper($name), 'asisten_id' => strtoupper($new_asisten), 'class' => strtoupper($class), 'semester' => $semester);
 
             $this->load->model('lesson_model');
-            $result = $this->lesson_model->set_data($data);
+            $valid = $this->lesson_model->validated_data($name, $class);
+            if ($valid == 0) {
+                $result = $this->lesson_model->set_data($data);
 
-            if ($result) {
-                $msg = '<div class="alert alert-success alert-dismissable">
-                            <h4>
-                                <center>Success</center>
-                            </h4>
-                        </div>';
-            }
-            else {
+                if ($result) {
+                    $msg = '<div class="alert alert-success alert-dismissable">
+                                <h4>
+                                    <center>Success</center>
+                                </h4>
+                            </div>';
+                } else {
+                    $msg = '<div class="alert alert-danger alert-dismissable">
+                                <h4>
+                                    <center>Failure</center>
+                                </h4>
+                            </div>';
+                }
+            } else {
+                if ($mk_id != NULL) {
+                    $this->lesson_model->set_temp(array('temp_id' => $mk_id));
+                }
                 $msg = '<div class="alert alert-danger alert-dismissable">
                             <h4>
-                                <center>Failure</center>
+                                <center>Data Already Insert</center>
                             </h4>
                         </div>';
             }

@@ -32,7 +32,7 @@ class Edit_dosen extends CI_Controller {
         if (strlen($password) != 32) {
             $password = md5($password);
         }
-        $data = array('dosen_id' => $id, 'username' => $username, 'password' => $password, 'name' => $name,
+        $data = array('dosen_id' => $id, 'username' => $username, 'password' => $password, 'name' => strtoupper($name),
                       'email' => $email, 'address' => $address, 'phone' => $phone);
         $result = $this->user_model->update_data($id, 'dosen', $data);
 
