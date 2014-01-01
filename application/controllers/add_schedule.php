@@ -30,9 +30,17 @@ class Add_schedule extends CI_Controller {
         $this->load->model('lesson_model');
         $mk_id = $this->lesson_model->get_id($name, $class);
 
-        $data = array('mk_id' => $mk_id['mk_id'], 'day_id' => $day, 'start' => $start, 'end' => $end, 'lab_id' => $lab_id);
+        $this->load->model('schedule_model');
+        $sch_id = NULL;
+        $temp = $this->schedule_model->get_temp();
+        if ($temp != '') {
+            $sch_id = $temp;
+        }
+
+        $data = array('sch_id' => $sch_id, 'mk_id' => $mk_id['mk_id'], 'day_id' => $day, 'start' => $start, 'end' => $end, 'lab_id' => $lab_id);
 
         $this->load->model('schedule_model');
+
         $value = $this->schedule_model->validated_id($data['mk_id']);
 
         if ($value == true) {
@@ -52,6 +60,9 @@ class Add_schedule extends CI_Controller {
 	                    </div>';
 	        }
 	    } else {
+            if ($sch_id != NULL) {
+                $this->schedule_model->set_temp(array('temp_id' => $sch_id));
+            }
 	    	$msg = '<div class="alert alert-danger alert-dismissable">
 	                        <h4>
 	                            <center>Data Already Insert</center>

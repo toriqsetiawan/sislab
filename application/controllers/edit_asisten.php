@@ -30,7 +30,11 @@ class Edit_asisten extends CI_Controller {
         $address = $this->security->xss_clean($this->input->post('address'));
         $phone = $this->security->xss_clean($this->input->post('phone'));
 
-        $data = array('asisten_id' => $id, 'username' => $username, 'password' => md5($password), 'name' => $name, 'grade' => $grade,
+        if (strlen($password) != 32) {
+            $password = md5($password);
+        }
+        
+        $data = array('asisten_id' => $id, 'username' => $username, 'password' => $password, 'name' => $name, 'grade' => $grade,
                       'email' => $email, 'address' => $address, 'phone' => $phone);
         $result = $this->user_model->update_data($id, 'asisten', $data);
 

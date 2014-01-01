@@ -29,7 +29,10 @@ class Edit_dosen extends CI_Controller {
         $address = $this->security->xss_clean($this->input->post('address'));
         $phone = $this->security->xss_clean($this->input->post('phone'));
 
-        $data = array('dosen_id' => $id, 'username' => $username, 'password' => md5($password), 'name' => $name,
+        if (strlen($password) != 32) {
+            $password = md5($password);
+        }
+        $data = array('dosen_id' => $id, 'username' => $username, 'password' => $password, 'name' => $name,
                       'email' => $email, 'address' => $address, 'phone' => $phone);
         $result = $this->user_model->update_data($id, 'dosen', $data);
 

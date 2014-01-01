@@ -82,6 +82,45 @@ class Schedule_model extends CI_Model {
     return $data;
   }
 
+  function delete_schedule($id)
+  {
+    $this->db->where('mk_id', $id);
+    $this->db->delete('schedule');
+  }
+
+  function get_temp()
+  {
+    $data = '';
+    $query = $this->db->get('temp_schedule');
+    if($query->num_rows != 0) {
+      $row = $query->row();
+      $data = $row->temp_id;
+    }
+
+    $this->delete_temp($data);
+
+    return $data;
+  }
+
+  private function delete_temp($id)
+  {
+    $this->db->where('temp_id', $id);
+    $this->db->delete('temp_schedule');
+  }
+
+  function mk_id($id)
+  {
+    $query = mysql_query("SELECT * FROM schedule");
+    $row = mysql_fetch_assoc($query);
+    $data = $row['sch_id'];
+    return $data;
+  }
+
+  function set_temp($id)
+    {
+      $this->db->insert('temp_schedule', $id);
+    }
+
   function validated_id($id)
   {
     $this->db->where('mk_id', $id);

@@ -34,8 +34,7 @@
           <div class="col-md-8 col-md-offset-2 text-center"> 
             <h2>Program Studi Informatika</h2>
             <p class="lead">Program studi Teknik Informatika bertujuan menhasilkan lulusan sarjana teknik informatika yang memiliki keunggulan di bidang keilmuan dan ketaqwaan sehingga mampu beradaptasi serta mengembangkan diri sesuai dengan perkembangan ilmu dan teknologi informasi. <br>
-            <br><br>
-              <a target="_blank"  href="http://informatika.umm.ac.id/"> Informatika Umm</a></p> 
+            <br>
           </div>
         </div>
       </div>

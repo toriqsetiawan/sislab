@@ -37,7 +37,7 @@
 
   <body>
 
-    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-fixed-top" role="navigation">
         <div class="navbar-header">
              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
                 <span class="sr-only">Toggle navigation</span>
@@ -48,13 +48,13 @@
             <a class="navbar-brand" href="<?php echo base_url(); ?>">LAB - IT</a>
         </div>
         
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-default navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#top">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="<?php echo base_url(); ?>#top">Home</a></li>
+                <li><a href="<?php echo base_url(); ?>#about">About</a></li>
+                <li><a href="<?php echo base_url(); ?>#services">Services</a></li>
+                <li><a href="<?php echo base_url(); ?>#portfolio">Portfolio</a></li>
+                <li><a href="<?php echo base_url(); ?>#contact">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if ($status == "Login") { ?>
@@ -69,7 +69,7 @@
                         <a href="#" id="myprofile"><?php echo $name; ?></a>
                     </li>
                     <li>
-                        <a href="#" id="myschedule">Schedule</a>
+                        <a href="<?php echo base_url(); ?>fe_schedule" id="myschedule">Schedule</a>
                     </li>
                 <?php } ?>
             </ul>

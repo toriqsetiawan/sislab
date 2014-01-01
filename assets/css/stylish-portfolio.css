@@ -354,10 +354,6 @@ i.scroll:hover {
 /* Responsive */
 
 @media (max-width: 767px) {
-	
-  .header {
-	background: url(../image/fe/bg.jpg) no-repeat center ; 
-  }
 
   .callout {
 	background: url(../image/fe/callout.jpg) no-repeat center ; 
