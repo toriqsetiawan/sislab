@@ -34,20 +34,17 @@ class Edit_dosen extends CI_Controller {
         }
         $data = array('dosen_id' => $id, 'username' => $username, 'password' => $password, 'name' => strtoupper($name),
                       'email' => $email, 'address' => $address, 'phone' => $phone);
+
         $result = $this->user_model->update_data($id, 'dosen', $data);
 
         if ($result) {
             $msg = '<div class="alert alert-success alert-dismissable">
-                        <h4>
-                            <center>Success</center>
-                        </h4>
+                        <h4><center>Success</center></h4>
                     </div>';
         }
         else {
             $msg = '<div class="alert alert-danger alert-dismissable">
-                        <h4>
-                            <center>Failure</center>
-                        </h4>
+                        <h4><center>Failure</center></h4>
                     </div>';
         }
         $this->session->set_userdata('msg', $msg);

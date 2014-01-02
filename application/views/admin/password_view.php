@@ -34,19 +34,19 @@
 							 <label for="currentpass" class="col-sm-4 control-label">Current Password</label>
 							<div class="col-sm-8">
 								<input type="hidden" id="login" name="login" value="<?php echo $token ?>">
-								<input type="password" class="form-control" id="currentpass" name="currentpass" value="" />
+								<input type="password" required="" class="form-control" id="currentpass" name="currentpass" value="" />
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="newpass" class="col-sm-4 control-label">New Password</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="newpass" name="newpass" value="" />
+								<input type="password" required="" class="form-control" id="newpass" name="newpass" value="" />
 							</div>
 						</div>
 						<div class="form-group">
 							 <label for="repass" class="col-sm-4 control-label">Re Type Password</label>
 							<div class="col-sm-8">
-								<input type="password" class="form-control" id="repass" name="repass" value="" />
+								<input type="password" required="" class="form-control" id="repass" name="repass" value="" />
 							</div>
 						</div>
 						<div class="form-group">

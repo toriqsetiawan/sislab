@@ -41,7 +41,9 @@ class Message extends CI_Controller {
             if ($temp != '') {
                 $testimony_id = $temp;
             }
-            $data = array('testimony_id' => $testimony_id, 'username' => $username, 'message' => $message);
+            $format = ("Y-m-d H:i:s");
+            $time = date($format);
+            $data = array('testimony_id' => $testimony_id, 'username' => $username, 'message' => $message, 'time' => $time);
                 
             $result = $this->message_model->set_data($data);
 

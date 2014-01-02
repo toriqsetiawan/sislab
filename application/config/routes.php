@@ -40,26 +40,30 @@
 
 // default route
 $route['default_controller'] = "fe_home";
-// route admin
-$route['e-admin'] = "login";
-// route edit user
-$route['edit_asisten/(:num)'] = "edit_asisten";
-$route['edit_dosen/(:num)'] = "edit_dosen";
-// route delete user
-$route['delete_user/([a-z]+)/(\d+)'] = "delete_user";
-// route add lesson
-$route['add_lesson/([1-7]+)'] = "add_lesson";
-// route edit lesson
-$route['edit_lesson/(:num)'] = "edit_lesson";
-// route delete lesson
-$route['delete_lesson/(:num)'] = "delete_lesson";
-// route add jadwal
-$route['add_schedule/([1-2]+)'] = "add_schedule";
+// route 404 page
+$route['404_override'] = '';
 // block redirect login
 $route['login'] = "error/page_missing";
 $route['login/index'] = "error/page_missing";
-// route 404 page
-$route['404_override'] = '';
+// route admin
+$route['e-admin'] = "login";
+// route add lesson
+$route['add_lesson/([1-7]+)'] = "add_lesson";
+// route add jadwal
+$route['add_schedule/([1-2]+)'] = "add_schedule";
+// route edit user
+$route['edit_asisten/(:num)'] = "edit_asisten";
+$route['edit_dosen/(:num)'] = "edit_dosen";
+// route edit lesson
+$route['edit_lesson/(:num)'] = "edit_lesson";
+// route edit schedule
+$route['edit_schedule/(:num)'] = "edit_schedule";
+// route delete lesson
+$route['delete_lesson/(:num)'] = "delete_lesson";
+// route delete user
+$route['delete_user/([a-z]+)/(\d+)'] = "delete_user";
+// route delete schedule
+$route['delete_schedule/(:num)'] = "delete_schedule";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

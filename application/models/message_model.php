@@ -21,29 +21,28 @@ class Message_model extends CI_Model {
   
   // -------------------------------------
   function set_temp($id)
-    {
-      $this->db->insert('temp_testimony', $id);
+  {
+    $this->db->insert('temp_testimony', $id);
+  }
+
+  function get_temp()
+  {
+    $data = '';
+    $query = $this->db->get('temp_testimony');
+    if($query->num_rows != 0) {
+      $row = $query->row();
+      $data = $row->temp_id;
     }
+    $this->delete_temp($data);
 
-    function get_temp()
-    {
-      $data = '';
-      $query = $this->db->get('temp_testimony');
-      if($query->num_rows != 0) {
-        $row = $query->row();
-        $data = $row->temp_id;
-      }
+    return $data;
+  }
 
-      $this->delete_temp($data);
-
-      return $data;
-    }
-
-    private function delete_temp($id)
-    {
-      $this->db->where('temp_id', $id);
-      $this->db->delete('temp_testimony');
-    }
+  private function delete_temp($id)
+  {
+    $this->db->where('temp_id', $id);
+    $this->db->delete('temp_testimony');
+  }
   // -------------------------------------
 
   function get_count()
@@ -53,16 +52,8 @@ class Message_model extends CI_Model {
 
   function get_all_data()
   {
-    $i = 0;
-    $data = array();
-    $query = mysql_query("SELECT * from testimony");
-    while($row = mysql_fetch_assoc($query)) {
-      $data[$i] = array('testimony_id' => $row['testimony_id'], 
-                    'username' => $row['username'], 
-                    'message' => $row['message']);
-      $i++;
-    }
-    return $data;
+    $query = $this->db->get('testimony');
+    return $query->result_array();
   }
 }
 ?>

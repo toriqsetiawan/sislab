@@ -73,7 +73,7 @@
 							<div class="col-sm-9">
 								<select class="form-control" id="start" name="start">
 									<?php for ($i=0; $i < 14; $i++) { ?>
-										<option value="<?php echo $i+1; ?>"><?php echo $lesson[$i]['start']; ?></option>
+										<option value="<?php echo $i+1; ?>"><?php echo $lesson[$i]['name_start']; ?></option>
 									<?php } ?>
 								</select>
 							</div>
@@ -83,7 +83,7 @@
 							<div class="col-sm-9">
 								<select class="form-control" id="end" name="end">
 									<?php for ($i=0; $i < 14; $i++) { ?>
-										<option value="<?php echo $i+1; ?>"><?php echo $lesson[$i]['end']; ?></option>
+										<option value="<?php echo $i+1; ?>"><?php echo $lesson[$i]['name_end']; ?></option>
 									<?php } ?>
 								</select>
 							</div>

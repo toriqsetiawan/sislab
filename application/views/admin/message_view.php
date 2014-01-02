@@ -31,6 +31,7 @@
 					              		<tr>
 						                    <th>Username</th>
 						                    <th>Message</th>
+						                    <th>Time-Sent</th>
 						                    <th><center>Actions</center></th>
 					              		</tr>
 					                </thead>
@@ -40,6 +41,7 @@
 					                	<tr>
 						                    <td><?php echo $data[$i]['username']; ?></td>
 						                    <td><?php echo $data[$i]['message']; ?></td>
+						                    <td><?php echo $data[$i]['time']; ?></td>
 						                    <td>
 						                    	<center>
 						                    		<a id="modal-<?php echo $i; ?>" href="#modal-container-<?php echo $i; ?>" role="button" data-toggle="modal"><i class="fa fa-minus-square-o"></i></a>

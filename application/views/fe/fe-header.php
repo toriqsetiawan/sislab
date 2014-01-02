@@ -48,7 +48,7 @@
             <a class="navbar-brand" href="<?php echo base_url(); ?>">LAB - IT</a>
         </div>
         
-        <div class="collapse navbar-default navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="<?php echo base_url(); ?>#top">Home</a></li>
                 <li><a href="<?php echo base_url(); ?>#about">About</a></li>

@@ -40,11 +40,34 @@
                             if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 1) {
                               $status = true;
                               echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];
+                              echo ' <a href="'.base_url().'edit_schedule/'.$schedule[$x]['sch_id'].'"><i class="fa fa-edit"></i></a>';
+                              echo '&nbsp;';
+                              echo '<a id="modal-d-'.$x.'" href="#modal-schedule-'.$x.'" role="button" data-toggle="modal"><i class="fa fa-minus-square-o"></i></a>';
                             } 
                             if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 1) {
                               $status = true;
                               echo $data[$x]['dosen_id'];
                             } 
+                            echo '
+                            <div class="modal fade" id="modal-schedule-'.$x.'" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title" id="myModalLabel">
+                                      Delete Schedule
+                                    </h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    Are you sure want to delete data <b>"'.$data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'].'"</b> ?
+                                  </div>
+                                  <div class="modal-footer">
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button> 
+                                     <a href="'.base_url().'delete_schedule/'.$schedule[$x]['sch_id'].'" type="button" class="btn btn-primary">Yes</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>';
                           }
                           if ($status == false) {
                             echo "";
@@ -89,11 +112,34 @@
                             if ($schedule[$x]['start'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 2) {
                               $status = true;
                               echo $data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'];
+                              echo ' <a href="'.base_url().'edit_schedule/'.$schedule[$x]['sch_id'].'"><i class="fa fa-edit"></i></a>';
+                              echo '&nbsp;';
+                              echo '<a id="modal-d-'.$x.'" href="#modal-schedule-10'.$x.'" role="button" data-toggle="modal"><i class="fa fa-minus-square-o"></i></a>';
                             } 
                             if ($schedule[$x]['end'] == $i+1 && $schedule[$x]['day_id'] == $j && $schedule[$x]['lab_id'] == 2) {
                               $status = true;
                               echo $data[$x]['dosen_id'];
                             } 
+                            echo '
+                            <div class="modal fade" id="modal-schedule-10'.$x.'" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title" id="myModalLabel">
+                                      Delete Schedule
+                                    </h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    Are you sure want to delete data <b>"'.$data[$x]['name'].' / '.$data[$x]['semester'].$data[$x]['class'].'"</b> ?
+                                  </div>
+                                  <div class="modal-footer">
+                                     <button type="button" class="btn btn-default" data-dismiss="modal">No</button> 
+                                     <a href="'.base_url().'delete_schedule/'.$schedule[$x]['sch_id'].'" type="button" class="btn btn-primary">Yes</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>';
                           }
                           if ($status == false) {
                             echo "";

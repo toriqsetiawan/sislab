@@ -53,37 +53,15 @@ class User_model extends CI_Model {
 
     function get_all_user($user)
     {
-      $query = mysql_query("SELECT * from $user ORDER BY name ASC");
-
-      $i = 0;
-      $data = array();
-      
       if ($user == 'asisten') {
-        while($row = mysql_fetch_array($query)) {
-          $data[$i] = array('asisten_id' => $row['asisten_id'], 
-                            'username' => $row['username'], 
-                            'password' => $row['password'], 
-                            'name' => $row['name'], 
-                            'grade' => $row['grade'], 
-                            'email' => $row['email'], 
-                            'address' => $row['address'], 
-                            'phone' => $row['phone']);
-          $i++;
-        }
-        return $data;
+        $this->db->order_by("grade", "asc"); 
+        $query = $this->db->get('asisten');
+        return $query->result_array();
       }
       if ($user == 'dosen') {
-        while($row = mysql_fetch_array($query)) {
-          $data[$i] = array('dosen_id' => $row['dosen_id'], 
-                            'username' => $row['username'], 
-                            'password' => $row['password'], 
-                            'name' => $row['name'], 
-                            'email' => $row['email'], 
-                            'address' => $row['address'], 
-                            'phone' => $row['phone']);
-          $i++;
-        }
-        return $data;
+        $this->db->order_by("name", "asc"); 
+        $query = $this->db->get('dosen');
+        return $query->result_array();
       }
     }
 
@@ -94,31 +72,16 @@ class User_model extends CI_Model {
 
     function get_asisten($id)
     {
-      $query = mysql_query("SELECT * from asisten WHERE asisten_id='$id'");
-      $row = mysql_fetch_assoc($query);
-      $data = array('asisten_id' => $row['asisten_id'], 
-                    'username' => $row['username'], 
-                    'password' => $row['password'], 
-                    'name' => $row['name'],
-                    'grade' => $row['grade'], 
-                    'email' => $row['email'], 
-                    'address' => $row['address'], 
-                    'phone' => $row['phone']);
-      return $data;
+      $this->db->where('asisten_id', $id);
+      $query = $this->db->get('asisten');
+      return $query->row_array();
     }
 
     function get_dosen($id)
     {
-      $query = mysql_query("SELECT * from dosen WHERE dosen_id='$id'");
-      $row = mysql_fetch_assoc($query);
-      $data = array('dosen_id' => $row['dosen_id'], 
-                    'username' => $row['username'], 
-                    'password' => $row['password'], 
-                    'name' => $row['name'],
-                    'email' => $row['email'], 
-                    'address' => $row['address'], 
-                    'phone' => $row['phone'] );
-      return $data;
+      $this->db->where('dosen_id', $id);
+      $query = $this->db->get('dosen');
+      return $query->row_array();
     }
 
     function get_name($user)

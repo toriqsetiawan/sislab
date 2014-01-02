@@ -24,7 +24,7 @@
                     <td><?php echo $i+1; ?></td>
                     <td><?php echo $new_data[$i]['time']; ?></td>
                     <td><?php echo $new_data[$i]['day']; ?></td>
-                    <td><?php echo $new_data[$i]['semester'].$new_data[$i]['class']; ?></td>
+                    <td><?php echo $new_data[$i]['name']."<br>".$new_data[$i]['semester'].$new_data[$i]['class']; ?></td>
                     <td><?php echo $new_data[$i]['d_name']; ?></td>
                     <td><?php echo $new_data[$i]['a_name']; ?></td>
                     <td>Lab <?php echo $new_data[$i]['lab_id']; ?></td>

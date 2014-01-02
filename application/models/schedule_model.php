@@ -19,15 +19,9 @@ class Schedule_model extends CI_Model {
 
   function select_schedule($id)
   {
-    $query = mysql_query("SELECT * FROM schedule WHERE sch_id='$id'");
-    $row = mysql_fetch_assoc($query);
-    $data = array('sch_id' => $row['sch_id'],
-                  'mk_id' => $row['mk_id'],
-                  'day_id' => $row['day_id'],
-                  'start' => $row['start'],
-                  'end' => $row['end'],
-                  'lab_id' => $row['lab_id']);
-    return $data;
+    $this->db->where('sch_id', $id);
+    $query = $this->db->get('schedule');
+    return $query->row_array();
   }
 
   function get_sch_id($id)
@@ -98,52 +92,26 @@ class Schedule_model extends CI_Model {
   }
   
   function load_lesson()
-  {
-  	$i=0;
-    $data = array();
-  	$query = mysql_query("SELECT * from lesson");
-  	while($row = mysql_fetch_assoc($query)) {
-          $data[$i] = array('id' => $row['id'], 
-                            'start' => $row['name_start'], 
-                            'end' => $row['name_end']);
-          $i++;
-      }
-      return $data;
+  { 
+  	$query = $this->db->get('lesson');
+    return $query->result_array();
   }
 
   function load_schedule()
   {
-      $i=0;
-      $data = array();
-      $query = mysql_query("SELECT * FROM schedule");
-      while($row = mysql_fetch_assoc($query)) {
-          $data[$i] = array('sch_id' => $row['sch_id'],
-                            'mk_id' => $row['mk_id'],
-                            'day_id' => $row['day_id'],
-                            'start' => $row['start'],
-                            'end' => $row['end'],
-                            'lab_id' => $row['lab_id']);
-          $i++;
-      }
-      return $data;
+    $query = $this->db->get('schedule');
+    return $query->result_array();
   }
 
   function load_day()
   {
-    $i=0;
-    $data = array();
-    $query = mysql_query("SELECT * FROM day");
-    while ($row = mysql_fetch_assoc($query)) {
-      $data[$i] = array('day_id' => $row['day_id'], 
-                        'name' => $row['name']);
-      $i++;
-    }
-    return $data;
+    $query = $this->db->get('day');
+    return $query->result_array();
   }
 
   function delete_schedule($id)
   {
-    $this->db->where('mk_id', $id);
+    $this->db->where('sch_id', $id);
     $this->db->delete('schedule');
   }
 

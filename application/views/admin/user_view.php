@@ -34,7 +34,7 @@
 				                	
 				                	<?php for ($i=0; $i < $count_asisten; $i++) { ?>
 				                	<tr>
-				                		<td><?php echo $asisten[$i]['asisten_id']; ?></td>
+				                		<td><?php echo $i+1; ?></td>
 					                    <td><?php echo $asisten[$i]['name']; ?></td>
 					                    <td><?php echo $asisten[$i]['grade']; ?></td>
 					                    <td><?php echo $asisten[$i]['email']; ?></td>

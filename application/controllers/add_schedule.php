@@ -48,15 +48,11 @@ class Add_schedule extends CI_Controller {
 
 	        if ($result) {
 	            $msg = '<div class="alert alert-success alert-dismissable">
-	                        <h4>
-	                            <center>Success</center>
-	                        </h4>
+	                        <h4><center>Success</center></h4>
 	                    </div>';
 	        } else {
 	            $msg = '<div class="alert alert-danger alert-dismissable">
-	                        <h4>
-	                            <center>Failure</center>
-	                        </h4>
+	                        <h4><center>Failure</center></h4>
 	                    </div>';
 	        }
 	    } else {
@@ -64,10 +60,8 @@ class Add_schedule extends CI_Controller {
                 $this->schedule_model->set_temp(array('temp_id' => $sch_id));
             }
 	    	$msg = '<div class="alert alert-danger alert-dismissable">
-	                        <h4>
-	                            <center>Data Already Insert</center>
-	                        </h4>
-	                    </div>';
+                        <h4><center>Data Already Insert</center></h4>
+                    </div>';
 	    }
         $this->session->set_userdata('msg', $msg);
         $this->add_dataset(); 

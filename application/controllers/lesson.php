@@ -1,7 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/* 
- * Description: Login controller profile
- */
+
 class Lesson extends CI_Controller {
     
     function __construct()

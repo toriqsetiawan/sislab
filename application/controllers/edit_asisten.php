@@ -40,16 +40,12 @@ class Edit_asisten extends CI_Controller {
 
         if ($result) {
             $msg = '<div class="alert alert-success alert-dismissable">
-                        <h4>
-                            <center>Success</center>
-                        </h4>
+                        <h4><center>Success</center></h4>
                     </div>';
         }
         else {
             $msg = '<div class="alert alert-danger alert-dismissable">
-                        <h4>
-                            <center>Failure</center>
-                        </h4>
+                        <h4><center>Failure</center></h4>
                     </div>';
         }
         $this->session->set_userdata('msg', $msg);

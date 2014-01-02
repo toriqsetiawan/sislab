@@ -35,29 +35,22 @@ class Add_user extends CI_Controller {
             $data = array('asisten_id' => $asisten_id, 'username' => $username, 'password' => md5($password), 'name' => strtoupper($name), 'grade' => $grade,
                             'email' => $email, 'address' => $address, 'phone' => $phone);
 
-            
             $result = $this->user_model->set_data('asisten', $data);
 
             if ($result) {
                 $msg = '<div class="alert alert-success alert-dismissable">
-                            <h4>
-                                <center>Success</center>
-                            </h4>
+                            <h4><center>Success</center></h4>
                         </div>';
             }
             else {
                 $msg = '<div class="alert alert-danger alert-dismissable">
-                            <h4>
-                                <center>Failure</center>
-                            </h4>
+                            <h4><center>Failure</center></h4>
                         </div>';
             }
         }
         else {
             $msg = '<div class="alert alert-danger alert-dismissable">
-                        <h4>
-                            <center>Please fill all field</center>
-                        </h4>
+                        <h4><center>Please fill all field</center></h4>
                     </div>';
         }
         $this->session->set_userdata('msg', $msg);
@@ -88,24 +81,18 @@ class Add_user extends CI_Controller {
 
             if ($result) {
                 $msg = '<div class="alert alert-success alert-dismissable">
-                            <h4>
-                                <center>Success</center>
-                            </h4>
+                            <h4><center>Success</center></h4>
                         </div>';
             }
             else {
                 $msg = '<div class="alert alert-danger alert-dismissable">
-                            <h4>
-                                <center>Failure</center>
-                            </h4>
+                            <h4><center>Failure</center></h4>
                         </div>';
             }
         }
         else {
             $msg = '<div class="alert alert-danger alert-dismissable">
-                        <h4>
-                            <center>Please fill all field</center>
-                        </h4>
+                        <h4><center>Please fill all field</center></h4>
                     </div>';
         }
         $this->session->set_userdata('msg', $msg);
